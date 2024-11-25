@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     vector<CitaMedica> citas;
-
+    dsadasdasdada
     // Citas !!! Enlazar base de datos !!!!!!!!!!
     citas.emplace_back("2024-12-01", 1, 101);
     citas.emplace_back("2024-12-02", 2, 102);
