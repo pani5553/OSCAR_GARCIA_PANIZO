@@ -1,1 +1,1 @@
-Inicio del proyecto, constructores basicos y pruebas
+Inicio del proyecto, constructores básicos y pruebas.
