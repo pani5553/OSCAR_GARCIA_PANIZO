@@ -2,6 +2,7 @@
 #define PACIENTES_H
 
 #include <string>
+#include <fstream>
 using namespace std;
 
 class Paciente {
@@ -10,10 +11,16 @@ public:
     string nombre;
 
     // Constructor
-    Paciente(int id, const string& nombre);
+    Paciente(int id = 0, const string& nombre = "");
 
-    // Métodos
+    // Mostrar información
     void mostrarInfo() const;
+
+    // Guardar
+    void guardarEnArchivo(ofstream& archivo) const;
+
+    // Cargar
+    static Paciente cargarDesdeArchivo(ifstream& archivo);
 };
 
-#endif
+#endif // PACIENTES_H
