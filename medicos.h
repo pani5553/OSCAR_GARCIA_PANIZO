@@ -1,3 +1,4 @@
+// Archivo: medicos.h
 #ifndef MEDICOS_H
 #define MEDICOS_H
 
@@ -11,10 +12,10 @@ public:
     string especialidad;
 
     // Constructor
-    Medico(int id, const string& nombre, const string& especialidad);
+    Medico(int id = 0, const string& nombre = "", const string& especialidad = "");
 
     // Métodos
     void mostrarInfo() const;
 };
 
-#endif
+#endif // MEDICOS_H

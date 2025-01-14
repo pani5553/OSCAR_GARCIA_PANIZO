@@ -1,8 +1,14 @@
-﻿// OSCAR_GARCIA_PANIZO.h: archivo de inclusión para archivos de inclusión estándar del sistema,
-// o archivos de inclusión específicos de un proyecto.
+﻿#ifndef OSCAR_GARCIA_PANIZO_H
+#define OSCAR_GARCIA_PANIZO_H
 
-#pragma once
-
+// Archivo de inclusión estándar para el proyecto
 #include <iostream>
+#include <vector>
+#include "pacientes.h"
+#include "citas.h"
+#include "medicos.h"
 
-// TODO: Haga referencia aquí a los encabezados adicionales que el programa requiere.
+// Declaraciones generales
+using namespace std;
+
+#endif // OSCAR_GARCIA_PANIZO_H
