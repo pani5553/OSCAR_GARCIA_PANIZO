@@ -1,15 +1,19 @@
 ﻿#include <iostream>
 #include <vector>
+#include <wchar.h>
+#include <locale>
+#include <windows.h>
 #include "pacientes.h"
 #include "citas.h"
 #include "medicos.h"
 using namespace std;
 
+
 int main() {
+    setlocale(LC_ALL, "");
     vector<Paciente> pacientes;
     vector<CitaMedica> citas;
 
-    // Cargar datos iniciales desde archivos
     cargarPacientesDesdeArchivo(pacientes, "pacientes.txt");
     cargarCitasDesdeArchivo(citas, "citas.txt");
 
@@ -37,7 +41,6 @@ int main() {
         }
     } while (opcionPrincipal != '3');
 
-    // Guardar datos al cerrar
     guardarPacientesEnArchivo(pacientes, "pacientes.txt");
     guardarCitasEnArchivo(citas, "citas.txt");
 

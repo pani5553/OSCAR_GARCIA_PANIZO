@@ -1,4 +1,3 @@
-// Archivo: medicos.h
 #ifndef MEDICOS_H
 #define MEDICOS_H
 

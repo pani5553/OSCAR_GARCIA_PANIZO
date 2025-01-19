@@ -1,4 +1,3 @@
-// Archivo: medicos.cpp
 #include "medicos.h"
 #include <iostream>
 using namespace std;

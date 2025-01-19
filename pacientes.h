@@ -24,7 +24,7 @@ public:
         const string& sexo = "", const string& direccion = "", const string& telefono = "",
         const string& correo = "", const string& grupoSanguineo = "", const string& historialMedico = "");
 
-    
+
     void mostrarInfo() const;
     void guardarEnArchivo(ofstream& archivo) const;
     static Paciente cargarDesdeArchivo(ifstream& archivo);

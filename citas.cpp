@@ -1,4 +1,3 @@
-// Archivo: citas.cpp
 #include "citas.h"
 #include <iostream>
 #include <fstream>
@@ -17,8 +16,6 @@ void CitaMedica::mostrarCita() const {
 
 void CitaMedica::cancelarCita() {
     fecha = "Cancelada";
-    ID_paciente = -1;
-    ID_medico = -1;
     cout << "Cita cancelada.\n";
 }
 

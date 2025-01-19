@@ -1,4 +1,3 @@
-// Archivo: citas.h
 #ifndef CITAS_H
 #define CITAS_H
 
