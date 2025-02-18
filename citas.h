@@ -1,27 +1,35 @@
 #ifndef CITAS_H
 #define CITAS_H
 
+#include "MInformacion.h"
 #include <string>
 #include <vector>
 using namespace std;
 
-class CitaMedica {
-public:
+enum EstadoCita { ACTIVO, CANCELADO, COMPLETADO };
+
+class CitaMedica : public MInformacion {
+protected:
     string fecha;
     int ID_paciente;
     int ID_medico;
+    EstadoCita estado;
 
-    // Constructor
-    CitaMedica(const string& fecha = "", int idPaciente = 0, int idMedico = 0);
+public:
+    CitaMedica(const string& fecha = "", int idPaciente = 0, int idMedico = 0, EstadoCita estado = ACTIVO);
+    void mostrarInfo() const override;
+    void modificarCita(const string& nuevaFecha, int nuevoIDMedico);
+    void cambiarEstado(EstadoCita nuevoEstado);
 
-    // Métodos
-    void mostrarCita() const;
-    void cancelarCita();
+    string getFecha() const;
+    int getIDPaciente() const;
+    int getIDMedico() const;
+    EstadoCita getEstado() const;
 };
 
-// Funciones auxiliares
+void filtrarCitasPorFecha(const vector<CitaMedica>& citas, const string& fecha);
+void filtrarCitasPorPaciente(const vector<CitaMedica>& citas, int idPaciente);
+void filtrarCitasPorMedico(const vector<CitaMedica>& citas, int idMedico);
 void menuCitas(vector<CitaMedica>& citas);
-void guardarCitasEnArchivo(const vector<CitaMedica>& citas, const string& nombreArchivo);
-void cargarCitasDesdeArchivo(vector<CitaMedica>& citas, const string& nombreArchivo);
 
 #endif // CITAS_H

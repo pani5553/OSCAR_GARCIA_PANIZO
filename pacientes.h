@@ -1,13 +1,14 @@
+
 #ifndef PACIENTES_H
 #define PACIENTES_H
 
+#include "MInformacion.h"
 #include <string>
 #include <vector>
-#include <fstream>
 using namespace std;
 
-class Paciente {
-public:
+class Paciente : public MInformacion {
+protected:
     int ID_paciente;
     string nombre;
     string dni;
@@ -19,23 +20,26 @@ public:
     string grupoSanguineo;
     string historialMedico;
 
-    // Constructor de pacientes
+public:
     Paciente(int id = 0, const string& nombre = "", const string& dni = "", const string& fechaNacimiento = "",
         const string& sexo = "", const string& direccion = "", const string& telefono = "",
         const string& correo = "", const string& grupoSanguineo = "", const string& historialMedico = "");
 
-
-    void mostrarInfo() const;
-    void guardarEnArchivo(ofstream& archivo) const;
-    static Paciente cargarDesdeArchivo(ifstream& archivo);
+    void mostrarInfo() const override;
+    void modificarDatos(const string& nuevoNombre, const string& nuevoDNI, const string& nuevaDireccion,
+        const string& nuevoTelefono, const string& nuevoCorreo);
+    int getID() const;
+    string getDNI() const;
+    string getNombre() const;
+    string getFechaNacimiento() const;
+    string getSexo() const;
+    string getDireccion() const;
+    string getTelefono() const;
+    string getCorreo() const;
+    string getGrupoSanguineo() const;
+    string getHistorialMedico() const;
 };
 
-// Funciones del txt
-void agregarPaciente(vector<Paciente>& pacientes);
-void mostrarPacientes(const vector<Paciente>& pacientes);
-void guardarPacientesEnArchivo(const vector<Paciente>& pacientes, const string& nombreArchivo);
-void cargarPacientesDesdeArchivo(vector<Paciente>& pacientes, const string& nombreArchivo);
-void buscarPacientePorDNI(const vector<Paciente>& pacientes);
 void menuPacientes(vector<Paciente>& pacientes);
 
 #endif // PACIENTES_H
